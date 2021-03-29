@@ -3,9 +3,16 @@ using static LibAoe2AISharp.Specifications.Ope;
 
 namespace Aoe2AISharp
 {
+    /// <summary>
+    /// 兵士の数を調整する
+    /// </summary>
     public class StrategyForSoldierCount : defrule
     {
-
+        /// <summary>
+        /// 兵士の数を調整する
+        /// </summary>
+        /// <param name="soldierCount">兵士の数</param>
+        /// <param name="townSize">タウンサイズ</param>
         public StrategyForSoldierCount(short soldierCount, short townSize)
         {
             Comment = string.Format($"soldier count {soldierCount} : extend town size to {townSize}");

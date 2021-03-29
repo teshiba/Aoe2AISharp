@@ -17,21 +17,12 @@ namespace Aoe2AISharp
         /// <param name="LimitationAmount">買いをやめる資源の保有量</param>
         public BuyShortageCommodity(commodity commodity, short needGoldAmount, short LimitationAmount)
         {
-            AIFactRelOp buyCommodityAmount;
-            switch (commodity) {
-            case commodity.food:
-                buyCommodityAmount = new food_amount(relop.le, LimitationAmount);
-                break;
-            case commodity.stone:
-                buyCommodityAmount = new stone_amount(relop.le, LimitationAmount);
-                break;
-            case commodity.wood:
-                buyCommodityAmount = new wood_amount(relop.le, LimitationAmount);
-                break;
-            default:
-                throw new Exception();
-            }
-
+            AIFactRelOp buyCommodityAmount = commodity switch {
+                commodity.food => new food_amount(relop.le, LimitationAmount),
+                commodity.stone => new stone_amount(relop.le, LimitationAmount),
+                commodity.wood => new wood_amount(relop.le, LimitationAmount),
+                _ => throw new Exception(),
+            };
             Facts.Add(
                 new can_buy_commodity(commodity),
                 new gold_amount(relop.ge, needGoldAmount),

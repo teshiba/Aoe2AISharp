@@ -40,7 +40,7 @@ namespace Aoe2AISharp
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildFarm"/> class.
         /// </summary>
-        /// <param name="count">食料が少なくなりそうなときに立てる最大数.</para m>
+        /// <param name="count">食料が少なくなりそうなときに立てる最大数.</param>
         public BuildFarm(int count)
             : base(building.farm, count)
         {

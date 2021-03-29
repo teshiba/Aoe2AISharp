@@ -46,7 +46,7 @@ namespace Aoe2AISharp
             : base(trainUnit, count)
         {
             if (count < 1)
-                throw new ArgumentNullException("count", "生産数が１より小さい値が指定されました。");
+                throw new ArgumentNullException(nameof(count), "生産数が１より小さい値が指定されました。");
             if (comparisonCount < 1)
                 throw new ArgumentNullException("percent", "生産数が１より小さい値が指定されました");
 

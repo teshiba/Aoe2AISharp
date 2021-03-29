@@ -17,21 +17,12 @@ namespace Aoe2AISharp
         /// <param name="LimitationGoldAmount">売りをやめる金の保有量</param>
         public SellSurplusCommodity(commodity commodity, short needAmount, short LimitationGoldAmount)
         {
-            AIFactRelOp sellCommodityAmount;
-            switch (commodity) {
-            case commodity.food:
-                sellCommodityAmount = new food_amount(relop.ge, needAmount);
-                break;
-            case commodity.stone:
-                sellCommodityAmount = new stone_amount(relop.ge, needAmount);
-                break;
-            case commodity.wood:
-                sellCommodityAmount = new wood_amount(relop.ge, needAmount);
-                break;
-            default:
-                throw new Exception();
-            }
-
+            AIFactRelOp sellCommodityAmount = commodity switch {
+                commodity.food => new food_amount(relop.ge, needAmount),
+                commodity.stone => new stone_amount(relop.ge, needAmount),
+                commodity.wood => new wood_amount(relop.ge, needAmount),
+                _ => throw new Exception(),
+            };
             Facts.Add(
                 new can_sell_commodity(commodity),
                 new gold_amount(relop.le, LimitationGoldAmount),

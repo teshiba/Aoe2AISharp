@@ -3,6 +3,9 @@ using LibAoe2AISharp.Specifications;
 
 namespace Aoe2AISharp
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class InitImperialAge : EnterAge
     {
         /// <summary>

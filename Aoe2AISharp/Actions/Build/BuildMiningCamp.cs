@@ -52,7 +52,7 @@ namespace Aoe2AISharp
             case resource_type.food:
             case resource_type.wood:
             default:
-                throw new ArgumentException("resourceType");
+                throw new ArgumentException(null, nameof(resourceType));
             }
 
             Facts.Add(

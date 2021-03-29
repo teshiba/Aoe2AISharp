@@ -11,7 +11,7 @@ namespace Aoe2AISharp
     /// </summary>
     public abstract class ResearchUnitNumberCondition : Research
     {
-        private readonly Dictionary<ri, unit> researchUnit = new Dictionary<ri, unit>() {
+        private readonly Dictionary<ri, unit> researchUnit = new () {
             {ri.man_at_arms,        unit.militiaman_line    },
             {ri.crossbow,           unit.archer             },
             {ri.elite_skirmisher,   unit.skirmisher         }

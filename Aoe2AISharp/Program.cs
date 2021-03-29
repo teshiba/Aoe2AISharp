@@ -11,7 +11,7 @@ namespace Aoe2AISharp
             //コメントをチャット出力します
             Debug.ChatLocalToSelf = false;
             Debug.ChatToAll = true;
-            KeywordDictionary.SetLocalLang(KeywordDictionary.LocalLang.Japanese);
+            LanguageConverter.SetLocalLang(LanguageConverter.LocalLang.Japanese);
 
             //RootAIFileクラスを継承したクラスを生成して
             //OutputFiles()で、.aiファイルと関連する.perファイルを出力します。
